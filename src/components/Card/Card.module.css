@@ -1,0 +1,14 @@
+.Card {
+  width: 450px;
+  background-color: #b3b3de47;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.Card p {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #736f6f;
+  padding: 0 30px;
+}
+
