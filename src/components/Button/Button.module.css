@@ -1,0 +1,30 @@
+.Button {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  width: 300px;
+  background-color: #9797e6;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+
+.Button:hover,
+.Button:focus {
+  outline: none;
+}
+
+.Button:hover {
+  background-color: #8080e0;
+}
+
+.Button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.Button:active{
+  background-color: #5757de;
+}
