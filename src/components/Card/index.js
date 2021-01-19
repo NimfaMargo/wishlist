@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import classes from './Card.module.css';
+import classes from 'components/Card/Card.module.css';
 
 const Card = ({text, url, price}) => (
     <div className={classes.Card}>

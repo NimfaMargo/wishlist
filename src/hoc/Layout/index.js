@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import classes from './Layout.module.css';
-import Button from "../../components/Button";
-import Card from "../../components/Card"
+import React from 'react';
+import classes from 'hoc/Layout/Layout.module.css';
+import Button from "components/Button";
+import Card from "components/Card"
 
 const Layout = () => {
   return (

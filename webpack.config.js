@@ -9,6 +9,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = process.env.NODE_ENV === 'production'
 
+const sourceRoot = path.resolve(__dirname, 'src');
+
 const optimization = () => {
     const config = {
         splitChunks: {
@@ -35,11 +37,17 @@ module.exports = {
         filename: filename('js'),
         path: path.resolve(__dirname, 'dist') // куда складывать
     },
-    optimization: optimization(),
-    devServer: {
-        port: 4200,
-        hot: isDev,
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        modules: [sourceRoot, 'node_modules'],
+        mainFields: ['module', 'main'],
+        symlinks: false,
     },
+    optimization: optimization(),
+    // devServer: {
+    //     port: 4200,
+    //     hot: isDev,
+    // },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./index.html",

@@ -2340,7 +2340,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@^6.1.11", "@storybook/addon-actions@6.1.11":
+"@storybook/addon-actions@*", "@storybook/addon-actions@^6.1.11", "@storybook/addon-actions@6.1.11":
   "integrity" "sha512-J44XLx2G732OG7Az79Cpk5UlI5SyXHeQqdykwT/4IEQXSBXAYWSTIJJjpJdcjR/D+zpklab1QDSiWxCrKbe81A=="
   "resolved" "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.1.11.tgz"
   "version" "6.1.11"
@@ -2380,6 +2380,13 @@
     "regenerator-runtime" "^0.13.7"
     "ts-dedent" "^2.0.0"
     "util-deprecate" "^1.0.2"
+
+"@storybook/addon-console@^1.2.2":
+  "integrity" "sha512-aTuYoz1Fit9PAhy0VDTjQ5rovRz5a+DgPRIaA5cktkiA9Y0ikK/cu525DDZLTh7oNMOt0fmRYyYPtknTMyeXrQ=="
+  "resolved" "https://registry.npmjs.org/@storybook/addon-console/-/addon-console-1.2.2.tgz"
+  "version" "1.2.2"
+  dependencies:
+    "global" "^4.3.2"
 
 "@storybook/addon-controls@6.1.11":
   "integrity" "sha512-KGK1qk95E+j0yDBgA93ctMCf/z9VosPtldhP2oZDPD8kAKz6dVPXkz7LKgrZYDH4ZySk4fDOApBC8OLe3bxE1g=="

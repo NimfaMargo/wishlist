@@ -1,4 +1,5 @@
 const custom = require('../webpack.config.js');
+const path = require('path')
 
 module.exports = {
   "stories": [
@@ -14,13 +15,19 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
   ],
-  webpackFinal: (config) => {
-    return {
-      ...config,
-      // resolve: {
-      //   ...config.resolve,
-      //  // ...custom.resolve
-      // },
-    };
+  webpackFinal: async (config) => {
+
+    config.resolve = {
+      ...config.resolve,
+      ...custom.resolve
+    }
+
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      include: path.resolve(__dirname, 'src'),
+    });
+
+    return config;
   },
 }
