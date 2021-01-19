@@ -16,18 +16,12 @@ module.exports = {
     '@storybook/addon-viewport',
   ],
   webpackFinal: async (config) => {
-
-    config.resolve = {
-      ...config.resolve,
-      ...custom.resolve
+    return {
+      ...config,
+      resolve: {
+        ...config.resolve,
+        ...custom.resolve
+      }
     }
-
-    config.module.rules.push({
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
-      include: path.resolve(__dirname, 'src'),
-    });
-
-    return config;
   },
 }

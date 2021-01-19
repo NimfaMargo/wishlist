@@ -1,4 +1,4 @@
-.Button {
+.button {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   width: 300px;
   background-color: #9797e6;
@@ -11,20 +11,20 @@
   line-height: 1;
 }
 
-.Button:hover,
-.Button:focus {
+.button:hover,
+.button:focus {
   outline: none;
 }
 
-.Button:hover {
+.button:hover {
   background-color: #8080e0;
 }
 
-.Button:disabled {
+.button:disabled {
   background: #ccc;
   cursor: not-allowed;
 }
 
-.Button:active{
+.button:active{
   background-color: #5757de;
 }

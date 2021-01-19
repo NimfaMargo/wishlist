@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import classes from 'components/Card/Card.module.css';
+import 'components/Card/Card.scss';
 
 const Card = ({text, url, price}) => (
-    <div className={classes.Card}>
+    <div className='card'>
         <p>{text}</p>
         <p>{url}</p>
         <p>{price}</p>

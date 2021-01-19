@@ -1,21 +1,23 @@
 import React from 'react';
-import classes from 'hoc/Layout/Layout.module.css';
+import 'hoc/Layout/Layout.scss';
 import Button from "components/Button";
 import Card from "components/Card"
 
 const Layout = () => {
   return (
-    <div className={classes.Layout}>
-        <Button>Добавить желание</Button>
-        <Card text="букет" url="url" price='1000'/>
-        <Card text="букет" url="url" price='1000'/>
-        <Card text="букет" url="url" price='1000'/>
-        <Card text="букет" url="url" price='1000'/>
+    <div className='layout'>
+        <div className='layout-main'>
+            <Button>Добавить желание</Button>
+            <Card text="букет" url="url" price='1000'/>
+            <Card text="букет" url="url" price='1000'/>
+            <Card text="букет" url="url" price='1000'/>
+            <Card text="букет" url="url" price='1000'/>
 
-        <Card text="букет" url="url" price='1000'/>
-        <Card text="букет" url="url" price='1000'/>
-        <Card text="букет" url="url" price='1000'/>
-        <Card text="букет" url="url" price='1000'/>
+            <Card text="букет" url="url" price='1000'/>
+            <Card text="букет" url="url" price='1000'/>
+            <Card text="букет" url="url" price='1000'/>
+            <Card text="букет" url="url" price='1000'/>
+        </div>
     </div>
   );
 }
