@@ -26,21 +26,6 @@ const optimization = () => {
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
-const cssLoader = (extra) => {
-    const loader = [{
-        loader: MiniCssExtractPlugin.loader,
-        options: {
-            publicPath: '.',
-        },
-    }, 'css-loader']
-
-    if(extra) {
-        loader.push(extra)
-    }
-
-    return loader
-}
-
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: {
@@ -79,11 +64,21 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: cssLoader()
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '.',
+                    }}
+                    ,'css-loader'],
             },
             {
                 test: /\.s[ac]ss$/,
-                use: cssLoader('sass-loader')
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '.',
+                    }}, 'css-loader', 'sass-loader'],
+
             },
             {
                 test: /\.(js|jsx)$/,
@@ -110,7 +105,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(ttf|woff|woff2|eot)$/, // шрифты
+                test: /\.(ttf|woff|woff2|eot)$/,
                 use: [
                     {
                         loader: 'file-loader',
