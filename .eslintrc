@@ -1,0 +1,29 @@
+{
+    "root": true,
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb"
+    ],
+    "plugins": [
+        "babel"
+    ],
+    "env": {
+        "serviceworker": true,
+        "browser": true,
+        "es6": true
+    },
+    "rules": {
+        "react/jsx-props-no-spreading": "warn",
+        "react/prop-types": "warn",
+        "react/forbid-prop-types": "warn",
+        "react/require-default-props": "off",
+        "jsx-a11y/click-events-have-key-events": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "./webpack.config.js"
+            }
+        }
+    }
+}
