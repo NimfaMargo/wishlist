@@ -1,0 +1,36 @@
+@import './Fonts';
+@import '~styles/Variables';
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: $font;
+    line-height: 21px;
+    font-variation-settings: 'wght' 400;
+}
+
+a {
+    color: $primary;
+    text-decoration: none;
+}
