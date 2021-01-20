@@ -1,8 +1,9 @@
+@import '~styles/Variables';
+
 .button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   width: 300px;
-  background-color: #9797e6;
-  color: #fff;
+  background-color: $primary;
+  color: $white;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -17,14 +18,14 @@
 }
 
 .button:hover {
-  background-color: #8080e0;
+  background-color: fade-out($primary, 0.2);
 }
 
 .button:disabled {
-  background: #ccc;
+  background: $disable;
   cursor: not-allowed;
 }
 
 .button:active{
-  background-color: #5757de;
+  background-color: $active;
 }
