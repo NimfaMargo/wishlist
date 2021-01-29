@@ -12,9 +12,3 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Добавить желание',
 };
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  children: 'Неактивная кнопка',
-  disabled: true,
-};
