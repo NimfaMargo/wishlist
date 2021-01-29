@@ -9,14 +9,18 @@
     "@testing-library/user-event": "^12.1.10",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.1",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
     "node-sass": "4.14.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-final-form": "^6.5.2",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4",
     "webpack": "^5.11.0",
     "webpack-cli": "^3.3.12",
-    "prop-types": "^15.7.2"
+    "@bem-react/classname": "^1.5.8"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
