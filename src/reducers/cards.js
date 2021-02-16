@@ -5,7 +5,7 @@ const cardsSlice = createSlice({
   initialState: { list: [] },
   reducers: {
     addCard: (state, action) => ({ ...state, list: [...state.list, action.payload] }),
-    removeCard: (state, action) => ({ ...state, list: state.list.filter((el) => el.id !== action.payload.id) }),
+    removeCard: (state, action) => ({ ...state, list: state.list.filter((el) => el.name !== action.payload) }),
   },
 });
 

@@ -1,15 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'components/Card/Card.scss';
+import './styles/Card.scss';
+import { useDispatch } from 'react-redux';
+import { removeCard } from 'reducers/cards';
+import { bem } from 'utils/bem';
 
-const Card = ({ name, url, price }) => (
-  <div className="card">
-    <p>{name}</p>
-    <p>{url}</p>
-    <p>{price}</p>
-  </div>
-);
+const cn = bem('card');
 
+const Card = ({ name, url, price }) => {
+  const dispatch = useDispatch();
+
+  return (
+    <div className={cn()}>
+      <p>{name}</p>
+      <p>{url}</p>
+      <p>{price}</p>
+      <button aria-label="remove" className={cn('remove')} onClick={() => dispatch(removeCard(name))} type="button" />
+    </div>
+  );
+};
 Card.propTypes = {
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
