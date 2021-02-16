@@ -1,7 +1,7 @@
 @import '~styles/Variables';
 
 .backdrop {
-  z-index: 50;
+  z-index: 20;
   background: fade-out($black, 0.3);
   position: fixed;
   top: 0;
