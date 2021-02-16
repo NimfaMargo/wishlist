@@ -1,0 +1,23 @@
+@import '~styles/Variables';
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &__title {
+    font-size: 20px;
+    color: $text-color;
+    align-self: center;
+    padding: 15px 0;
+  }
+
+  &__input {
+    margin: 5px 0;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px 0;
+  }
+}
