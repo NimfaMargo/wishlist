@@ -5,11 +5,14 @@ import 'components/Form/Form.scss';
 import Input from 'components/Input';
 import Textarea from 'components/Textarea';
 import { bem } from 'utils/bem';
+import { addCard } from 'reducers/cards';
+import { useDispatch } from 'react-redux';
 
 const cn = bem('create-form');
 
 const WishForm = () => {
-  const handleSubmitForm = () => {};
+  const dispatch = useDispatch();
+  const handleSubmitForm = (form) => dispatch(addCard(form));
 
   return (
     <div className={cn()}>
