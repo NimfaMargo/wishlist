@@ -5,17 +5,25 @@ import 'components/Form/Form.scss';
 import Input from 'components/Input';
 import Textarea from 'components/Textarea';
 import { bem } from 'utils/bem';
-import { addCard } from 'reducers/cards';
-import { useDispatch } from 'react-redux';
+import { addCard, updateCard, clearEditingCard } from 'reducers/cards';
+import { useDispatch, useSelector } from 'react-redux';
 import { hideModal } from 'reducers/modal';
 
 const cn = bem('create-form');
 
 const WishForm = () => {
   const dispatch = useDispatch();
+  const { editingCard } = useSelector((state) => state.cards);
 
   const handleSubmitForm = (form) => {
-    dispatch(addCard(form));
+    if (editingCard) {
+      dispatch(updateCard(form));
+      dispatch(clearEditingCard());
+    } else {
+      dispatch(addCard(
+        { id: Math.floor(Math.random() * 100), ...form },
+      ));
+    }
     dispatch(hideModal());
   };
 
@@ -23,6 +31,7 @@ const WishForm = () => {
     <div className={cn()}>
       <h2 className={cn('title')}>Создай свое желание</h2>
       <Form
+        initialValues={{ ...editingCard }}
         onSubmit={handleSubmitForm}
         render={({ handleSubmit, submitting }) => (
           <form onSubmit={handleSubmit}>
