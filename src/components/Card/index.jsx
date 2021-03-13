@@ -3,19 +3,18 @@ import PropTypes from 'prop-types';
 import './styles/Card.scss';
 import { useDispatch } from 'react-redux';
 import { removeCard } from 'reducers/cards';
-import { bem } from 'utils/bem';
 
-const cn = bem('card');
-
-const Card = ({ name, url, price }) => {
+const Card = ({
+  id, name, url, price, onEdit,
+}) => {
   const dispatch = useDispatch();
 
   return (
-    <div className={cn()}>
-      <p>{name}</p>
-      <p>{url}</p>
+    <div className="card">
+      {url ? <p><a href={url}>{name}</a></p> : <p>{name}</p>}
       <p>{price}</p>
-      <button aria-label="remove" className={cn('remove')} onClick={() => dispatch(removeCard(name))} type="button" />
+      <button aria-label="edit" className="card__remove" onClick={() => dispatch(removeCard(id))} type="button" />
+      <button aria-label="remove" className="card__edit" onClick={() => onEdit(id)} type="button" />
     </div>
   );
 };
