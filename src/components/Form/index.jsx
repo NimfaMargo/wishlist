@@ -7,12 +7,17 @@ import Textarea from 'components/Textarea';
 import { bem } from 'utils/bem';
 import { addCard } from 'reducers/cards';
 import { useDispatch } from 'react-redux';
+import { hideModal } from 'reducers/modal';
 
 const cn = bem('create-form');
 
 const WishForm = () => {
   const dispatch = useDispatch();
-  const handleSubmitForm = (form) => dispatch(addCard(form));
+
+  const handleSubmitForm = (form) => {
+    dispatch(addCard(form));
+    dispatch(hideModal());
+  };
 
   return (
     <div className={cn()}>

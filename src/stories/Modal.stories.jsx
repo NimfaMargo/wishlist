@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'components/Modal';
+import Form from 'components/Form';
 
 export default {
   title: 'Components/Modal',
@@ -15,16 +16,8 @@ export const Primary = () => {
     <>
       <button type="button" onClick={() => setOpen(true)}>Click to open</button>
       <Modal isOpen={isOpen} onClose={() => setOpen(false)}>
-        <>
-          <h1>Пример</h1>
-          <span>
-            <p>Модалка</p>
-            <p>показана</p>
-          </span>
-
-        </>
+        <Form />
       </Modal>
-
     </>
   );
 };
