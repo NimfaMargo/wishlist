@@ -1,6 +1,6 @@
 @import '~styles/Variables';
 
-.create-form {
+.form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -15,9 +15,17 @@
   &__input {
     margin: 5px 0;
   }
+
   &__buttons {
     display: flex;
     justify-content: space-evenly;
     margin: 5px 0;
+  }
+
+  &__error {
+    color: red;
+    font-size: 11px;
+    line-height: 15px;
+    padding-left: 10px;
   }
 }

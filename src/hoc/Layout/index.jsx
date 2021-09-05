@@ -7,7 +7,7 @@ import Modal from 'components/Modal';
 import Form from 'components/Form';
 import { hideModal, showModal } from 'reducers/modal';
 import { setEditingCard, clearEditingCard, removeCard } from 'reducers/cards';
-import ConfirmDialog from '../../components/ComfirmDialog';
+import ConfirmDialog from 'components/ComfirmDialog';
 
 const Layout = () => {
   const dispatch = useDispatch();

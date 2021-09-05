@@ -4,12 +4,15 @@ import Button from 'components/Button';
 import 'components/Form/Form.scss';
 import Input from 'components/Input';
 import Textarea from 'components/Textarea';
-import { bem } from 'utils/bem';
 import { addCard, updateCard, clearEditingCard } from 'reducers/cards';
 import { useDispatch, useSelector } from 'react-redux';
 import { hideModal } from 'reducers/modal';
 
-const cn = bem('create-form');
+export const validateRequired = (required, values) => Object.fromEntries(
+  required.filter((name) => !values[name]).map((name) => [name, 'Обязательное поле']),
+);
+
+const validate = (values) => validateRequired(['name'], values);
 
 const WishForm = () => {
   const dispatch = useDispatch();
@@ -28,9 +31,10 @@ const WishForm = () => {
   };
 
   return (
-    <div className={cn()}>
-      <h2 className={cn('title')}>Создай свое желание</h2>
+    <div className="form">
+      <h2 className="form__title">{`${editingCard ? 'Измени' : 'Создай'} желание`}</h2>
       <Form
+        validate={validate}
         initialValues={{ ...editingCard }}
         onSubmit={handleSubmitForm}
         render={({ handleSubmit, submitting }) => (
@@ -38,41 +42,41 @@ const WishForm = () => {
             <Field
               name="name"
               render={({ input, meta }) => (
-                <div className={cn('input')}>
-                  <Input type="text" placeholder="Название" {...input} />
-                  {meta.touched && meta.error && <span>{meta.error}</span>}
+                <div className="form__input">
+                  <Input required type="text" placeholder="Название" {...input} />
+                  {meta.touched && meta.error && <span className="form__error">{meta.error}</span>}
                 </div>
               )}
             />
             <Field
               name="price"
               render={({ input, meta }) => (
-                <div className={cn('input')}>
+                <div className="form__input">
                   <Input type="text" placeholder="Цена" {...input} />
-                  {meta.touched && meta.error && <span>{meta.error}</span>}
+                  {meta.touched && meta.error && <span className="form__error">{meta.error}</span>}
                 </div>
               )}
             />
             <Field
               name="url"
               render={({ input, meta }) => (
-                <div className={cn('input')}>
+                <div className="form__input">
                   <Input type="text" placeholder="Ссылка на товар" {...input} />
-                  {meta.touched && meta.error && <span>{meta.error}</span>}
+                  {meta.touched && meta.error && <span className="form__error">{meta.error}</span>}
                 </div>
               )}
             />
             <Field
               name="comments"
-              className={cn('input')}
+              className="form__input"
               render={({ input, meta }) => (
                 <div>
                   <Textarea type="text" placeholder="Комментарии" {...input} />
-                  {meta.touched && meta.error && <span>{meta.error}</span>}
+                  {meta.touched && meta.error && <span className="form__error">{meta.error}</span>}
                 </div>
               )}
             />
-            <div className={cn('buttons')}>
+            <div className="form__buttons">
               <Button
                 type="submit"
                 disabled={submitting}
